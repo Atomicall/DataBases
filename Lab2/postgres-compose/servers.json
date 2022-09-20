@@ -1,0 +1,14 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "DB_labs",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "admin",
+            "Host": "db_postgres",
+            "Password": "kuprianovatop",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+        }
+    }
+}

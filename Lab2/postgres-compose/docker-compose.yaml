@@ -1,0 +1,39 @@
+version: '3.1'
+
+networks:
+  postgres-net:
+volumes:
+  postgres-data:
+  postgres-config:
+  pgadmin-data:
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: db_postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/data/postgres
+      - postgres-config:/var/lib/postgresql
+    env_file:
+      - ./postgres.env
+    networks:
+      - postgres-net
+    
+  pgadmin:
+    image: dpage/pgadmin4:6
+    container_name: db_pgadmin
+    env_file:
+      - ./pgadmin.env
+    volumes:
+      - pgadmin-data:/root/.pgadmin
+      - ./servers.json:/pgadmin4/servers.json
+    networks: 
+      - postgres-net
+    ports:
+      - "5555:80"
+    restart: unless-stopped
+    depends_on:
+      - postgres

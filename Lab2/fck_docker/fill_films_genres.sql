@@ -1,0 +1,31 @@
+SELECT * FRom video_rental.films_genres;
+INSERT INTO video_rental.films_genres (films_id, genres_id) VALUES
+(1, 2),
+(1, 6),
+(2, 2),
+(2, 6),
+(3, 2),
+(3, 6),
+(3, 4),
+(4, 3),
+(4, 6),
+(5, 3),
+(5, 6),
+(6, 2),
+(6, 3),
+(6, 6),
+(7, 1),
+(7, 2),
+(7, 3), 
+(7, 6),
+(8, 1),
+(8, 3),
+(8, 6),
+(9, 1),
+(9, 3), 
+(9, 6),
+(10, 2), 
+(10, 3),
+(10, 6);
+SELECT * FRom video_rental.films_genres;
+
